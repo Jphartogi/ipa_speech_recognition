@@ -1,0 +1,19 @@
+<launch>
+
+<arg name="min_dist" default="0.15"/>
+
+
+ <node pkg="speech_recognition" type="person_pose_publisher.py" name="person_pose_publisher" respawn="false" output="screen"></node>
+
+ <node pkg="speech_recognition" type="person_approach.py" name="person_approach" respawn="false" output="screen"></node>
+
+ <node pkg="speech_recognition" type="robot_move.py" name="listener" respawn="false" output="screen">
+    <param name="~min_dist" value="$(arg min_dist)"/>
+     </node>
+
+ <node pkg="speech_recognition" type="respeaker_node.py" name="respeaker_node" respawn="false" output="screen"/>
+    
+ 
+
+
+ </launch>
