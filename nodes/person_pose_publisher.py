@@ -7,13 +7,13 @@ from tf.transformations import euler_from_quaternion, quaternion_from_euler
 import tf
 
 def poseCallback(msg):
-    print "kesini dia buat publish"
+    
     position = msg.pose.position
     orientation = msg.pose.orientation
     
     (roll, pitch, yaw) = euler_from_quaternion ([orientation.x,orientation.y,orientation.z,orientation.w])
     br = tf.TransformBroadcaster()
-    print roll,pitch,yaw
+    print "orientation of person speaking is ",roll,pitch,yaw
     br.sendTransform((position.x, position.y, 0),
                     tf.transformations.quaternion_from_euler(roll, pitch, yaw),
                     rospy.Time.now(),
