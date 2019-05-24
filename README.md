@@ -89,7 +89,7 @@ This package uses Python package [SpeechRecognition](https://pypi.python.org/pyp
   ```
   Then run the desired code
   ```bash
-      rosrun speech_recognition test.py ( for testing the speech recognition in infinite loop of recognizing speech )
+      rosrun speech_recognition test_online.py/test_offfline.py ( for testing the speech recognition in infinite loop of recognizing speech )
       rosrun speech_recognition ros_voice_control.py ( for a simple conversation which include some decision making )
       rosrun speech_recognition ipa_speech_recognition.py ( for sending a command in this case " come closer or come here " to send a robot to come near to you ) 
   ```
