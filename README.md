@@ -1,64 +1,11 @@
 Speech_recognition using Respeaker in ROS platform
 =============
 
-
-
 respeaker mic array
 ======================
 A ROS Package for Respeaker Mic Array
-## Supported Devices
 
-- [Respeaker Mic Array v2.0](http://wiki.seeedstudio.com/ReSpeaker_Mic_Array_v2.0/)
-
-    ![Respeaker Mic Array v2.0](https://github.com/SeeedDocument/ReSpeaker_Mic_Array_V2/raw/master/img/Hardware%20Overview.png)
-
-## Preparation
-
-1. Install this package
-
-    Assumed that ROS is properly installed.
-
-    You can install this package via `apt-get`.
-
-    ```bash
-    sudo apt-get install ros-$ROS_DISTRO-respeaker-ros
-    ```
-
-    Or you can also build from the source.
-
-    ```bash
-    mkdir -p ~/catkin_ws/src && ~/catkin_ws/src
-    git clone https://github.com/jsk-ros-pkg/jsk_3rdparty.git
-    cd ~/catkin_ws
-    source /opt/ros/kinetic/setup.bash
-    rosdep install --from-paths src -i -r -n -y
-    catkin config --init
-    catkin build respeaker_ros
-    source ~/catkin_ws/devel/setup.bash
-    ```
-
-1. Register respeaker udev rules
-
-    Normally, we cannot access USB device without permission from user space.
-    Using `udev`, we can give the right permission on only respeaker device automatically.
-
-    Please run the command as followings to install setting file:
-
-    ```bash
-    roscd respeaker_ros
-    sudo cp -f $(rospack find respeaker_ros)/config/60-respeaker.rules /etc/udev/rules.d/60-respeaker.rules
-    sudo systemctl restart udev
-    ```
-
-    And then re-connect the device.
-
-1. Update firmware
-
-    ```bash
-    git clone https://github.com/respeaker/usb_4_mic_array.git
-    cd usb_4_mic_array
-    sudo python dfu.py --download 6_channels_firmware.bin  # The 6 channels version 
-    ```
+https://github.com/furushchev/respeaker_ros
 
 ros_speech_recognition
 ======================
