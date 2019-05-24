@@ -68,7 +68,7 @@ This package uses Python package [SpeechRecognition](https://pypi.python.org/pyp
 
 ## Preparation
 
-1. Install this package
+1. Install this package ( this is a normal package, there is also this package included in the file, if you want to use the this installation mode, then just delete the package from this repo ros_speech_recognition. But then to change the speech recognition engine ( google, sphinx etc ) must be done manually
 
   ```bash
   sudo apt install ros-${ROS_DISTRO}-ros-speech-recognition
